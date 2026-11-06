@@ -11,6 +11,9 @@ permissions:
 
 jobs:
   daily-report:
+    concurrency:
+      group: daily-work-report
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - name: Check out the default branch
