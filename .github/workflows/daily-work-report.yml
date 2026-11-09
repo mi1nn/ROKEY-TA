@@ -1,0 +1,88 @@
+name: Daily work report
+
+on:
+  schedule:
+    - cron: "0 9 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  daily-report:
+    concurrency:
+      group: daily-work-report
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Create or update the daily report pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          export TZ=Asia/Seoul
+
+          DEFAULT_BRANCH="$(gh repo view "$GITHUB_REPOSITORY" --json defaultBranchRef --jq '.defaultBranchRef.name')"
+          git fetch origin "$DEFAULT_BRANCH"
+          git switch --detach FETCH_HEAD
+
+          report_date="$(date +%F)"
+          next_date="$(date -d "$report_date +1 day" +%F)"
+          start="${report_date}T00:00:00+09:00"
+          end="${next_date}T00:00:00+09:00"
+          mapfile -t commits < <(git log --reverse --format='%H%x09%s' --since="$start" --before="$end" HEAD)
+
+          if ((${#commits[@]} == 0)); then
+            echo "No commits found for $report_date; skipping the daily report."
+            exit 0
+          fi
+
+          report_file="reports/daily/${report_date}.md"
+          branch="daily-work-report/${report_date}"
+
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            git fetch origin "$branch"
+            git switch --force-create "$branch" FETCH_HEAD
+          else
+            git switch --force-create "$branch" HEAD
+          fi
+
+          mkdir -p "$(dirname "$report_file")"
+          {
+            printf '# Daily Work Report — %s\n\n' "$report_date"
+            printf '## Completed work\n\n'
+            for commit in "${commits[@]}"; do
+              IFS=$'\t' read -r sha subject <<< "$commit"
+              printf -- '- [%s](https://github.com/%s/commit/%s): %s\n' \
+                "${sha:0:7}" "$GITHUB_REPOSITORY" "$sha" "$subject"
+              mapfile -t changed_files < <(git show --format= --name-only "$sha" | sort -u)
+              for file in "${changed_files[@]}"; do
+                [[ -n "$file" ]] && printf '  - `%s`\n' "$file"
+              done
+            done
+          } > "$report_file"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$report_file"
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: add daily work report for $report_date"
+          fi
+          git push --set-upstream origin "$branch"
+
+          pr_number="$(gh pr list --state open --head "$branch" --base "$DEFAULT_BRANCH" --json number --jq '.[0].number')"
+          if [[ -n "$pr_number" ]]; then
+            gh pr edit "$pr_number" --title "Daily work report — $report_date" --body-file "$report_file"
+          else
+            gh pr create \
+              --base "$DEFAULT_BRANCH" \
+              --head "$branch" \
+              --title "Daily work report — $report_date" \
+              --body-file "$report_file"
+          fi
