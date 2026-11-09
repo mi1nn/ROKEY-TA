@@ -1,0 +1,7 @@
+-- The C compiler identification is Clang 19.1.7
+-- The CXX compiler identification is Clang 19.1.7
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang
+-- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang - broken
+-- Configuring incomplete, errors occurred!

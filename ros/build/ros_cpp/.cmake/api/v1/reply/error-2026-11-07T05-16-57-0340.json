@@ -1,0 +1,37 @@
+{
+	"cmake" : 
+	{
+		"generator" : 
+		{
+			"multiConfig" : false,
+			"name" : "Unix Makefiles"
+		},
+		"paths" : 
+		{
+			"cmake" : "/Users/min/miniconda3/envs/ros/bin/cmake",
+			"cpack" : "/Users/min/miniconda3/envs/ros/bin/cpack",
+			"ctest" : "/Users/min/miniconda3/envs/ros/bin/ctest",
+			"root" : "/Users/min/miniconda3/envs/ros/share/cmake-4.3"
+		},
+		"version" : 
+		{
+			"isDirty" : false,
+			"major" : 4,
+			"minor" : 3,
+			"patch" : 4,
+			"string" : "4.3.4",
+			"suffix" : ""
+		}
+	},
+	"objects" : [],
+	"reply" : 
+	{
+		"client-colcon-cmake" : 
+		{
+			"codemodel-v2" : 
+			{
+				"error" : "no buildsystem generated"
+			}
+		}
+	}
+}

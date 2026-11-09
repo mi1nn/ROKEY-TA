@@ -1,0 +1,55 @@
+[0.047s] Invoking command in '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp': CONDA_PROMPT_MODIFIER=(ros) SHLVL=2 _=/usr/bin/env /Users/min/miniconda3/envs/ros/bin/cmake /Users/min/orca/ROKEY-TA/ros/src/ros-cpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/Users/min/orca/ROKEY-TA/ros/install/ros_cpp
+[0.131s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.131s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.131s]   CMake.
+[0.131s] 
+[0.131s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.131s]   to tell CMake that the project requires at least <min> but has been updated
+[0.131s]   to work with policies introduced by <max> or earlier.
+[0.131s] 
+[0.131s] 
+[1.726s] -- The C compiler identification is Clang 19.1.7
+[1.927s] -- The CXX compiler identification is Clang 19.1.7
+[1.955s] -- Detecting C compiler ABI info
+[2.177s] -- Detecting C compiler ABI info - failed
+[2.177s] -- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang
+[2.321s] -- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang - broken
+[2.322s] CMake Error at /Users/min/miniconda3/envs/ros/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:67 (message):
+[2.322s]   The C compiler
+[2.322s] 
+[2.322s]     "/Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang"
+[2.322s] 
+[2.322s]   is not able to compile a simple test program.
+[2.322s] 
+[2.322s]   It fails with the following output:
+[2.322s] 
+[2.322s]     Change Dir: '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-6CTwC5'
+[2.322s]     
+[2.322s]     Run Build Command(s): /Users/min/miniconda3/envs/ros/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9509a/fast
+[2.322s]     /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9509a.dir/build.make CMakeFiles/cmTC_9509a.dir/build
+[2.322s]     Building C object CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o
+[2.322s]     /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -c /Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-6CTwC5/testCCompiler.c
+[2.322s]     Linking C executable cmTC_9509a
+[2.322s]     /Users/min/miniconda3/envs/ros/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9509a.dir/link.txt --verbose=1
+[2.322s]     ld: warning: ignoring file /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd, malformed file
+[2.322s]     /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd:4:20: error: unknown architecture
+[2.322s]                        arm64e.x1-macos, arm64e.x1-maccatalyst ]
+[2.322s]                        ^~~~~~~~~~~~~~~
+[2.322s]     
+[2.322s]     ld: dynamic executables or dylibs must link with libSystem.dylib for architecture arm64
+[2.322s]     arm64-apple-darwin20.0: error: linker command failed with exit code 1 (use -v to see invocation)
+[2.322s]     /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/min/miniconda3/envs/ros/lib -L/Users/min/miniconda3/envs/ros/lib  CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -o cmTC_9509a
+[2.322s]     make[1]: *** [cmTC_9509a] Error 1
+[2.322s]     make: *** [cmTC_9509a/fast] Error 2
+[2.322s]     
+[2.322s]     
+[2.322s] 
+[2.322s] 
+[2.323s] 
+[2.323s]   CMake will not be able to correctly generate this project.
+[2.323s] Call Stack (most recent call first):
+[2.323s]   CMakeLists.txt:2 (project)
+[2.323s] 
+[2.323s] 
+[2.323s] -- Configuring incomplete, errors occurred!
+[2.325s] Invoked command in '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp' returned '1': CONDA_PROMPT_MODIFIER=(ros) SHLVL=2 _=/usr/bin/env /Users/min/miniconda3/envs/ros/bin/cmake /Users/min/orca/ROKEY-TA/ros/src/ros-cpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/Users/min/orca/ROKEY-TA/ros/install/ros_cpp

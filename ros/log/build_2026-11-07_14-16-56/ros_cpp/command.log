@@ -1,0 +1,1 @@
+Invoking command in '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp': CONDA_PROMPT_MODIFIER=(ros) SHLVL=2 _=/usr/bin/env /Users/min/miniconda3/envs/ros/bin/cmake /Users/min/orca/ROKEY-TA/ros/src/ros-cpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/Users/min/orca/ROKEY-TA/ros/install/ros_cpp

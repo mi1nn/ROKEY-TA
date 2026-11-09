@@ -1,0 +1,53 @@
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- The C compiler identification is Clang 19.1.7
+-- The CXX compiler identification is Clang 19.1.7
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang
+-- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang - broken
+CMake Error at /Users/min/miniconda3/envs/ros/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "/Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-6CTwC5'
+    
+    Run Build Command(s): /Users/min/miniconda3/envs/ros/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9509a/fast
+    /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9509a.dir/build.make CMakeFiles/cmTC_9509a.dir/build
+    Building C object CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o
+    /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -c /Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-6CTwC5/testCCompiler.c
+    Linking C executable cmTC_9509a
+    /Users/min/miniconda3/envs/ros/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9509a.dir/link.txt --verbose=1
+    ld: warning: ignoring file /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd, malformed file
+    /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd:4:20: error: unknown architecture
+                       arm64e.x1-macos, arm64e.x1-maccatalyst ]
+                       ^~~~~~~~~~~~~~~
+    
+    ld: dynamic executables or dylibs must link with libSystem.dylib for architecture arm64
+    arm64-apple-darwin20.0: error: linker command failed with exit code 1 (use -v to see invocation)
+    /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/min/miniconda3/envs/ros/lib -L/Users/min/miniconda3/envs/ros/lib  CMakeFiles/cmTC_9509a.dir/testCCompiler.c.o -o cmTC_9509a
+    make[1]: *** [cmTC_9509a] Error 1
+    make: *** [cmTC_9509a/fast] Error 2
+    
+    
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!

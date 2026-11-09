@@ -1,0 +1,54 @@
+[0.014s] Invoking command in '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp': CONDA_PROMPT_MODIFIER=(ros) SHLVL=2 _=/usr/bin/env /Users/min/miniconda3/envs/ros/bin/cmake /Users/min/orca/ROKEY-TA/ros/src/ros-cpp -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/Users/min/orca/ROKEY-TA/ros/install/ros_cpp
+[0.144s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.144s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[0.144s]   CMake.
+[0.144s] 
+[0.144s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[0.144s]   to tell CMake that the project requires at least <min> but has been updated
+[0.144s]   to work with policies introduced by <max> or earlier.
+[0.144s] 
+[0.144s] 
+[0.396s] -- The C compiler identification is Clang 19.1.7
+[0.599s] -- The CXX compiler identification is Clang 19.1.7
+[0.627s] -- Detecting C compiler ABI info
+[0.806s] -- Detecting C compiler ABI info - failed
+[0.806s] -- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang
+[0.966s] -- Check for working C compiler: /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang - broken
+[0.966s] CMake Error at /Users/min/miniconda3/envs/ros/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:67 (message):
+[0.966s]   The C compiler
+[0.966s] 
+[0.966s]     "/Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang"
+[0.966s] 
+[0.966s]   is not able to compile a simple test program.
+[0.966s] 
+[0.966s]   It fails with the following output:
+[0.966s] 
+[0.966s]     Change Dir: '/Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-kXgmdo'
+[0.966s]     
+[0.966s]     Run Build Command(s): /Users/min/miniconda3/envs/ros/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_efb48/fast
+[0.966s]     /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_efb48.dir/build.make CMakeFiles/cmTC_efb48.dir/build
+[0.966s]     Building C object CMakeFiles/cmTC_efb48.dir/testCCompiler.c.o
+[0.966s]     /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang   -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_efb48.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_efb48.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_efb48.dir/testCCompiler.c.o -c /Users/min/orca/ROKEY-TA/ros/build/ros_cpp/CMakeFiles/CMakeScratch/TryCompile-kXgmdo/testCCompiler.c
+[0.966s]     Linking C executable cmTC_efb48
+[0.967s]     /Users/min/miniconda3/envs/ros/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efb48.dir/link.txt --verbose=1
+[0.967s]     ld: warning: ignoring file /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd, malformed file
+[0.967s]     /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd:4:20: error: unknown architecture
+[0.967s]                        arm64e.x1-macos, arm64e.x1-maccatalyst ]
+[0.967s]                        ^~~~~~~~~~~~~~~
+[0.967s]     
+[0.967s]     ld: dynamic executables or dylibs must link with libSystem.dylib for architecture arm64
+[0.967s]     arm64-apple-darwin20.0: error: linker command failed with exit code 1 (use -v to see invocation)
+[0.967s]     /Users/min/miniconda3/envs/ros/bin/arm64-apple-darwin20.0.0-clang -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem /Users/min/miniconda3/envs/ros/include  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/min/miniconda3/envs/ros/lib -L/Users/min/miniconda3/envs/ros/lib  CMakeFiles/cmTC_efb48.dir/testCCompiler.c.o -o cmTC_efb48
+[0.967s]     make[1]: *** [cmTC_efb48] Error 1
+[0.967s]     make: *** [cmTC_efb48/fast] Error 2
+[0.967s]     
+[0.967s]     
+[0.967s] 
+[0.967s] 
+[0.967s] 
+[0.967s]   CMake will not be able to correctly generate this project.
+[0.967s] Call Stack (most recent call first):
+[0.967s]   CMakeLists.txt:2 (project)
+[0.967s] 
+[0.967s] 
+[0.967s] -- Configuring incomplete, errors occurred!
